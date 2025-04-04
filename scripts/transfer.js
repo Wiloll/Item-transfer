@@ -376,7 +376,12 @@ transfer.buildType = () => extend(Building, {
       cont.button(Icon.cancel, run(() => this.acceptableItems.clear()));
       for (var i = 1; i < items.size; i++) {
         if (items.get(i).isHidden()) continue;
+        try {
         this.addButton(cont, items.get(i), group);
+        }
+        catch(e) {
+          print.error(e);
+        }
         if (i % 6 == 5) cont.row();
       }
 
@@ -401,7 +406,7 @@ transfer.buildType = () => extend(Building, {
   },
 
   addButton(cont, item, group) {
-    var button = cont.button(new TextureRegionDrawable(item.getIcon(Cicon.medium)), Styles.black, 30, run(() => {
+    var button = cont.button(new TextureRegionDrawable(item.getIcon()), Styles.black, 30, run(() => {
       //Vars.control.input.frag.config.hideConfig();
       this.addAcceptItem(item);
       button.setChecked(!button.isChecked())
