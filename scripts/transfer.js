@@ -364,8 +364,8 @@ transfer.buildType = () => extend(Building, {
       table.background(Styles.black);
 
       table.table(cons(t => {
-        t.button("@transfer.accept", Styles.clearTogglet, run(() => this._send = false)).width(90).height(50).group(group);
-        t.button("@transfer.send", Styles.clearTogglet, run(() => this._send = true)).width(90).height(50).group(group);
+        t.button("@transfer.accept", Styles.black, run(() => this._send = false)).width(90).height(50).group(group);
+        t.button("@transfer.send", Styles.black, run(() => this._send = true)).width(90).height(50).group(group);
       }));
       table.row();
 
@@ -401,7 +401,7 @@ transfer.buildType = () => extend(Building, {
   },
 
   addButton(cont, item, group) {
-    var button = cont.button(new TextureRegionDrawable(item.icon(Cicon.medium)), Styles.clearToggleTransi, 30, run(() => {
+    var button = cont.button(new TextureRegionDrawable(item.getIcon(Cicon.medium)), Styles.black, 30, run(() => {
       //Vars.control.input.frag.config.hideConfig();
       this.addAcceptItem(item);
       button.setChecked(!button.isChecked())
