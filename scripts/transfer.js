@@ -380,7 +380,7 @@ transfer.buildType = () => extend(Building, {
         this.addButton(cont, items.get(i), group);
         }
         catch(e) {
-          print.error(e);
+          print(e);
         }
         if (i % 6 == 5) cont.row();
       }
