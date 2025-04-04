@@ -406,13 +406,12 @@ transfer.buildType = () => extend(Building, {
   },
 
   addButton(cont, item, group) {
-    var button = cont.button(new Drawable(Icon(item)), Styles.black, 30, run(() => {
-      //Vars.control.input.frag.config.hideConfig();
+    var button = cont.button(new Drawable(item.icon(Cicon.small)), Styles.black, 30, run(() => {
       this.addAcceptItem(item);
-      button.setChecked(!button.isChecked())
+      button.setChecked(!button.isChecked());
     })).group(group).get();
-    //button.update(run(()=>))
   },
+
 
   addAcceptItem(item) {
     if (this.acceptableItems.contains(item)) {
