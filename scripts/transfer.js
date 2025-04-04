@@ -406,7 +406,7 @@ transfer.buildType = () => extend(Building, {
   },
 
   addButton(cont, item, group) {
-    var button = cont.button(new Drawable(item.getIcon()), Styles.black, 30, run(() => {
+    var button = cont.button(new Drawable(item.Icon()), Styles.black, 30, run(() => {
       //Vars.control.input.frag.config.hideConfig();
       this.addAcceptItem(item);
       button.setChecked(!button.isChecked())
